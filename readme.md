@@ -32,6 +32,7 @@ cat ../../mapreduce-test-data/access.log | python mapper1.py | sort -k1,1 | pyth
 ![shot1](./screenshots/screen_shot1.png)
 ![shot2](./screenshots/screen_shot2.png)
 
+![shot2](./screenshots/mapreduce1.png)
 
 
 # Files in the directory:
@@ -76,8 +77,6 @@ mapper11.py: This file contains the code for the second map reduce. It reads the
 reducer11.py: This file contains the code for the second reduce. It reads the output of the second map reduce and outputs the top 3 IP addresses for each hour.
 
 intermediate_results.txt: This file contains the output of the first map reduce. It is used as input for the second map reduce.
-
-
 
 
 
