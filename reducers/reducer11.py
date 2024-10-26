@@ -11,7 +11,6 @@ for line in sys.stdin:
     hour, ip = hour_ip[1:].split("]", 1)
     count = int(count)
 
-    # new hour comes, print top 3 IPs for last hour
     if hour != current_hour:
         if current_hour is not None:
             top_ip_counts = heapq.nlargest(3, ip_count_heap)
@@ -20,10 +19,8 @@ for line in sys.stdin:
         current_hour = hour
         ip_count_heap = []
 
-    # keep track of IP address, count for current hour
     heapq.heappush(ip_count_heap, (count, ip))
 
-# don't forget to print top 3 IPs for the last hour
 if current_hour == hour:
     top_ip_counts = heapq.nlargest(3, ip_count_heap)
     for ic in top_ip_counts:

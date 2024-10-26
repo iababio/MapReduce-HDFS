@@ -18,5 +18,5 @@ os.environ["FROM_HOUR"] = str(from_hour)
 os.environ["TO_HOUR"] = str(to_hour)
 
 # Run MapReduce
-os.system("cat ../../mapreduce-test-data/access.log | python mapper1.py | sort -k1,1 | python reducer1.py > intermediate_results.txt")
-os.system("cat intermediate_results.txt | python reducer2.py")
+os.system("cat ../../data/access.log | python mappers/mapper1.py | sort -k1,1 | python reducers/reducer1.py > data/intermediate_results.txt")
+os.system("cat data/intermediate_results.txt | python reducers/reducer2.py")

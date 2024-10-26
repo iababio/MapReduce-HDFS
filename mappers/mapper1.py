@@ -13,4 +13,4 @@ for line in sys.stdin:
     if match:
         hour = int(match.group('hour'))
         if from_hour <= hour < to_hour:
-            print '%s\t%s' % ('[' + match.group('hour') + ']' + match.group('ip'), 1)
+            print('%s\t%s' % ('[' + match.group('hour') + ']' + match.group('ip'), 1))

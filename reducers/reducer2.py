@@ -30,3 +30,4 @@ if from_hour <= hour < to_hour:
     top_ip_counts = heapq.nlargest(3, ip_count_heap)
     for ic in top_ip_counts:
         print('%s\t%s:%s' % (current_hour, ic[1], ic[0]))
+

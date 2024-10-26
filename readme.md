@@ -11,13 +11,11 @@ And then run the following command:
 cat intermediate_results.txt | python mapper11.py | sort -k1,1 | python reducer11.py
 ```
 
-## For assignment 2, we need to run the following command:
+## running the code:
 
 ```bash
  ./run_script.py 1-2
 ```
-
-
 
 
 If the log data does not contain any entries for the specified hour range, the script will not output anything but it will also not yield an error. 
@@ -31,33 +29,39 @@ export TO_HOUR=1
 cat ../../mapreduce-test-data/access.log | python mapper1.py | sort -k1,1 | python reducer1.py > intermediate_results.txt
  ```
 
-
-
-
-## Challenges faced:
-- The main challenge was to understand the logic of the map reduce and how to implement it in python.
-
-
-- ensuring that there are logs in the access file for hours that are being queried, so we  have introduce intermediate results to store the results of the first map reduce and then use it in the second map reduce.
-
-- Preventing errors such as, adding additional checks in reducer1.py and reducer2.py to ensure that they don't try to compare with key and hour unless those variables have been properly defined.
-
+![shot1](./screenshots/screen_shot1.png)
+![shot2](./screenshots/screen_shot2.png)
 
 
 
 # Files in the directory:
-- mapper.py
-- reducer.py
-- mapper1.py
-- reducer1.py
-- mapper11.py
-- reducer11.py
-- run_script.py
-- intermediate_results.txt
-- screen_shot1.png
-- screen_shot2.png
-- readme.md
-
+```bash
+mapreduce/
+│
+├── mappers/
+│   ├── mapper.py
+│   ├── mapper1.py
+│   ├── mapper11.py
+│
+├── reducers/
+│   ├── reducer.py
+│   ├── reducer1.py
+│   ├── reducer11.py
+│   ├── reducer2.py
+│
+├── scripts/
+│   ├── run_script.py
+│
+├── data/
+│   ├── access.log
+│   ├── intermediate_results.txt
+│
+├── screenshots/
+│   ├── screen_shot1.png
+│   ├── screen_shot2.png
+│
+└── readme.md
+```
 mapper.py: This file contains the code for the first map reduce. It reads the access.log file and outputs the IP address and the hour of the log entry.
 
 reducer.py: This file contains the code for the first reduce. It reads the output of the first map reduce and outputs the IP address and the hour of the log entry.
@@ -73,9 +77,7 @@ reducer11.py: This file contains the code for the second reduce. It reads the ou
 
 intermediate_results.txt: This file contains the output of the first map reduce. It is used as input for the second map reduce.
 
-screen_shot1.png: This file contains the screenshot of the output of the first/Question 1..
 
-screen_shot2.png: This file contains the screenshot of the output of the second/question 2.
 
 
 
