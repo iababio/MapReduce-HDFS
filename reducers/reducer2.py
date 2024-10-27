@@ -26,8 +26,7 @@ for line in sys.stdin:
             ip_count_heap = []
         heapq.heappush(ip_count_heap, (count, ip))
 
-if from_hour <= hour < to_hour:
+if current_hour is not None:  # Change here to check if current_hour is defined
     top_ip_counts = heapq.nlargest(3, ip_count_heap)
     for ic in top_ip_counts:
         print('%s\t%s:%s' % (current_hour, ic[1], ic[0]))
-
