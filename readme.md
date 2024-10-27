@@ -14,7 +14,7 @@ cat intermediate_results.txt | python mapper11.py | sort -k1,1 | python reducer1
 ## running the code:
 
 ```bash
- ./run_script.py 1-2
+ Python ./scripts/run_script.py 1-2
 ```
 
 
